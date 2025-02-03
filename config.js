@@ -1,0 +1,1 @@
+const API_KEY = "a670ab855a174dd28e4e9544f2fd8cf6";  // ضع مفتاح API الخاص بك هنا
