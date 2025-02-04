@@ -1,0 +1,61 @@
+/* Reset ????? ?????? ?????? */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
+
+.match-container {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.match-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.match-teams img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.match-info {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.watch-link {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.watch-link:hover {
+    text-decoration: underline;
+}
