@@ -1,61 +1,79 @@
-/* Reset ????? ?????? ?????? */
+
+/* ????? ????? ????? ???????? */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f4f4f4;
+    direction: rtl;
     text-align: center;
-    padding: 10px;
 }
 
+/* ????? ?????? */
+body {
+    background-color: #f2f2f2;
+    padding: 15px;
+}
+
+/* ????? ??????? ???????? */
 .match-container {
     background: white;
     border-radius: 10px;
     padding: 15px;
-    margin: 15px auto;
-    width: 90%;
-    max-width: 400px;
+    margin: 10px auto;
+    width: 95%;
+    max-width: 500px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* ????? ???????? */
 .match-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.match-teams img {
-    width: 80px;
-    height: auto;
-    border-radius: 5px;
-}
-
+/* ??? ????? */
 .match-teams {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between;
     margin: 10px 0;
 }
 
-.match-info {
-    font-size: 14px;
-    color: #333;
-    margin-top: 10px;
+/* ??? ??????? */
+.match-teams img {
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
 }
 
-.watch-link {
-    display: block;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
+/* ??? ?????? */
+.team-name {
+    font-size: 16px;
     font-weight: bold;
 }
 
+/* ??????? ???????? */
+.match-info {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* ???? ???????? */
+.watch-link {
+    display: block;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 .watch-link:hover {
-    text-decoration: underline;
+    background: #0056b3;
 }
