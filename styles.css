@@ -208,4 +208,270 @@ body {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
-@keyframes fade
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.STING-WEB-Toggles {
+  width: 93%;
+  margin: 0 auto;
+  max-width: 450px;
+}
+.STING-WEB-Toggle-1 {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 93%;
+  margin-bottom: 20px;
+}
+#STING-WEB-Visitor {
+  text-align: center;
+  border: 1px solid #15191d;
+  border-radius: 8px;
+  background: #15191d;
+  color: #fff;
+  padding: 0 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+.STING-WEB-Toggle-2 {
+  display: flex;
+  gap: 8px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+.STING-WEB-Toggle-2 div {
+  font-size: 14px;
+  padding: 2px 20px;
+  background: #15191d;
+  border-radius: 50px;
+  color: #bfc3d4;
+}
+.STING-WEB-Toggle-2 .ActiveNow {
+  color: #fff !important;
+  font-weight: 600;
+}
+.LiveNow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.LiveNow:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #ff0000;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  animation: 0.5s ease-in-out infinite blinker;
+}
+
+
+
+
+
+
+
+.STING-WEB-Matches-Center {
+  width: 100%;
+  margin: 20px auto;
+  max-width: 450px;
+}
+.STING-WEB-Cup-Name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: 8px auto;
+  background: #15191d;
+  border-radius: 8px;
+  padding: 4px 12px;
+}
+
+.STING-WEB-Cup-Name-Right,
+.STING-WEB-Cup-Name-Left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.STING-WEB-Cup-Name-Left a {
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+.STING-WEB-Cup-Name-Right img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.STING-WEB-Cup-Name-Right h3 {
+  font-size: 13px;
+  color: #fff;
+}
+.STING-WEB-Match a {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  background: #15191dbf;
+  border-radius: 8px;
+  width: 85%;
+  margin: 2px auto;
+  padding: 4px 12px;
+  gap: 8px;
+}
+.STING-WEB-Match.NOT {
+  order: 2;
+}
+.STING-WEB-Match.END {
+  order: 4;
+}
+.STING-WEB-Match.LIVE {
+  order: 1;
+}
+.STING-WEB-Matches-Center {
+  display: grid;
+}
+.STING-WEB-Cup-Matches {
+  order: 2;
+  display: grid;
+}
+.STING-WEB-Cup-Matches.pinned {
+  order: 1;
+}
+.STING-WEB-Match-Right {
+  display: grid;
+  align-items: center;
+  gap: 7px;
+  padding-left: 20px;
+  border-left: 2px solid #16181b;
+}
+.STING-WEB-Team-Info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.STING-WEB-Match-Right-T,.STING-WEB-Match-Right-B {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.STING-WEB-Team-Info .Team-Logo {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+.STING-WEB-Team-Info .Team-Name {
+  font-size: 13px;
+  font-weight: 300;
+  color: #bfc3d4;
+}
+.STING-WEB-Match-Left {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  justify-items: center;
+}
+.STING-WEB-Team-Goal {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.Match-Status {
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.STING-WEB-Progress {
+  position: relative;
+  height: 8px;
+  background-color: #ffffff4a;
+  border-radius: 2px;
+  margin-top: 10px;
+  width: 55%;
+}
+.STING-WEB-Progress-Bar {
+  height: 100%;
+  background-color: #00dd75;
+  width: 0;
+  transition: width 1s;
+}
+.STING-WEB-Time-Display {
+  position: absolute;
+  top: -8px;
+  right: -30px;
+  z-index: 9;
+  color: #ff0000;
+  font-size: 13px;
+  font-weight: 600;
+}
+.Match-Status.live {
+  color: #ff0000;
+}
+.STING-WEB-Match.NOT .Match-Status.Not-Start,
+.STING-WEB-Match.NOT .STING-WEB-Time-Descending {
+  font-size: 16px;
+}
+
+.STING-WEB-Cup-Matches.collapsed .STING-WEB-Match {
+  display: none !important;
+}
+
+.STING-WEB-Toggle-Matches {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.STING-WEB-PIN {
+  display: flex;
+  align-items: center;
+}
+
+.STING-WEB-TITLE {
+  font-size: 17px;
+  margin-right: 8px;
+  color: #00dd75;
+}
+
+.STING-WEB-Mobile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+  border-top: 2px solid #8a8a9724;
+  max-width: 450px;
+  margin: 0 auto;
+  background: #0b0d10;
+  z-index: 99;
+}
+.active-span {
+  color: #00dd75;
+}
+.STING-WEB-Mobile-Ico {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color: #fff;
+  font-size: 14px;
+  gap: 4px;
+}
