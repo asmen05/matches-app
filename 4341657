@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joaan Tv</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/asmen05/matches-app/style.css">
+</head>
+
+
+
+
+
+<body class="fade-in">
+    <!-- HEADER -->
+    <header>
+        <div class="STING-WEB-Header">
+            <!-- LOGO -->
+            <div class="STING-WEB-Header-Logo">
+                <a href="/">
+                    <h1 style="font-size: 0;">Joaan TV</h1>
+                    <img src="/base64/Logo.png" width="50px" alt="Joaan TV">
+                </a>
+            </div>
+            <!-- FAST SETTING -->
+            <div class="STING-WEB-Toggle">
+                <span class="STING-WEB-Lang_SVG"></span>
+                <a href="https://api.whatsapp.com/send?text=تصفح%20أحدث%20المباريات%20الآن! https://joaantv.com/"
+                    target="_blank"><span class="STING-WEB-Share_SVG"></span></a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- MATCHES PAGE -->
+    <style>
+        
+        @font-face { 
+    font-family: "Neo Sans Arabic";
+    font-style: normal; 
+    font-weight: 400;
+    font-display: swap; 
+    src: local("Neo Sans Arabic"),
+    url("https://www.messisporat.com/assets/font/Arabic.woff2") format("woff2");
+ }
+        
+        .STING-WEB-Match-Card {
+            padding: 10px 0;
+            width: 88%;
+            margin: 0 auto;
+            border-radius: 8px;
+            background-size: cover;
+        }
+
+        .STING-WEB-Not-Events_SVG {
+            background: no-repeat center url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.11 22.71H5.9C5.1936 22.71 4.51599 22.4301 4.01555 21.9315C3.51511 21.433 3.23264 20.7564 3.23 20.05V4.00001C3.22469 3.64603 3.28984 3.29453 3.42164 2.96596C3.55345 2.63739 3.74928 2.33831 3.99774 2.08612C4.2462 1.83394 4.54233 1.63368 4.86891 1.49701C5.19548 1.36033 5.54598 1.28997 5.9 1.29001H18.11C18.4636 1.28995 18.8136 1.36037 19.1396 1.49716C19.4656 1.63396 19.7611 1.83437 20.0088 2.0867C20.2565 2.33902 20.4514 2.63819 20.5821 2.96671C20.7127 3.29523 20.7766 3.64651 20.77 4.00001V20.1C20.7569 20.7968 20.4709 21.4606 19.9734 21.9487C19.476 22.4368 18.8069 22.7101 18.11 22.71ZM5.9 2.79001C5.74252 2.7885 5.58639 2.81908 5.44112 2.87987C5.29585 2.94066 5.16447 3.0304 5.05501 3.14361C4.94554 3.25682 4.86027 3.39114 4.80439 3.53837C4.74851 3.68561 4.7232 3.84267 4.73 4.00001V20.1C4.74295 20.4007 4.87223 20.6845 5.09054 20.8916C5.30885 21.0987 5.59909 21.2129 5.9 21.21H18.11C18.4177 21.21 18.7127 21.0878 18.9302 20.8703C19.1478 20.6527 19.27 20.3577 19.27 20.05V4.00001C19.27 3.69236 19.1478 3.39731 18.9302 3.17976C18.7127 2.96222 18.4177 2.84001 18.11 2.84001L5.9 2.79001Z' fill='%23fff'/%3E%3Cpath d='M20 12.75H14.47C14.2711 12.75 14.0803 12.671 13.9397 12.5303C13.799 12.3897 13.72 12.1989 13.72 12C13.72 11.8011 13.799 11.6103 13.9397 11.4697C14.0803 11.329 14.2711 11.25 14.47 11.25H20C20.1989 11.25 20.3897 11.329 20.5303 11.4697C20.671 11.6103 20.75 11.8011 20.75 12C20.75 12.1989 20.671 12.3897 20.5303 12.5303C20.3897 12.671 20.1989 12.75 20 12.75Z' fill='%23fff'/%3E%3Cpath d='M9.54 12.75H4C3.80109 12.75 3.61032 12.671 3.46967 12.5303C3.32902 12.3897 3.25 12.1989 3.25 12C3.25 11.8011 3.32902 11.6103 3.46967 11.4697C3.61032 11.329 3.80109 11.25 4 11.25H9.54C9.73891 11.25 9.92968 11.329 10.0703 11.4697C10.211 11.6103 10.29 11.8011 10.29 12C10.29 12.1989 10.211 12.3897 10.0703 12.5303C9.92968 12.671 9.73891 12.75 9.54 12.75Z' fill='%23fff'/%3E%3Cpath d='M15.36 6.13001H8.64C8.44189 6.12742 8.25263 6.04757 8.11253 5.90747C7.97244 5.76738 7.89259 5.57811 7.89 5.38001V2.00001C7.89 1.8011 7.96902 1.61033 8.10967 1.46968C8.25032 1.32903 8.44109 1.25001 8.64 1.25001H15.36C15.4589 1.24866 15.557 1.26714 15.6486 1.30436C15.7402 1.34157 15.8234 1.39677 15.8933 1.46668C15.9632 1.53659 16.0184 1.61981 16.0557 1.71141C16.0929 1.80301 16.1113 1.90114 16.11 2.00001V5.38001C16.11 5.57892 16.031 5.76969 15.8903 5.91034C15.7497 6.05099 15.5589 6.13001 15.36 6.13001ZM9.36 4.63001H14.58V2.79001H9.39L9.36 4.63001Z' fill='%23fff'/%3E%3Cpath d='M15.36 22.71H8.64C8.44783 22.7103 8.26288 22.6368 8.12332 22.5047C7.98377 22.3726 7.90025 22.1919 7.89 22V18.62C7.89259 18.4219 7.97244 18.2326 8.11253 18.0925C8.25263 17.9524 8.44189 17.8726 8.64 17.87H15.36C15.5589 17.87 15.7497 17.949 15.8903 18.0897C16.031 18.2303 16.11 18.4211 16.11 18.62V22C16.1022 22.1928 16.0194 22.3749 15.8793 22.5075C15.7392 22.6401 15.5529 22.7128 15.36 22.71ZM9.36 21.21H14.58V19.37H9.39L9.36 21.21Z' fill='%23fff'/%3E%3Cpath d='M12 15.15C11.3627 15.15 10.7398 14.9609 10.21 14.6066C9.68029 14.2524 9.26758 13.7489 9.02416 13.1599C8.78075 12.571 8.71757 11.923 8.84262 11.2981C8.96768 10.6732 9.27535 10.0995 9.72667 9.64959C10.178 9.19966 10.7527 8.89378 11.378 8.77066C12.0032 8.64755 12.651 8.71275 13.2392 8.958C13.8274 9.20324 14.3296 9.61752 14.6822 10.1484C15.0348 10.6792 15.222 11.3027 15.22 11.94C15.2174 12.7923 14.8769 13.6087 14.2734 14.2104C13.6698 14.8121 12.8523 15.15 12 15.15ZM12 10.22C11.6598 10.22 11.3273 10.3209 11.0444 10.5099C10.7616 10.6989 10.5411 10.9675 10.4109 11.2818C10.2807 11.5961 10.2467 11.9419 10.313 12.2756C10.3794 12.6092 10.5432 12.9157 10.7838 13.1562C11.0243 13.3968 11.3308 13.5606 11.6644 13.627C11.9981 13.6933 12.3439 13.6593 12.6582 13.5291C12.9725 13.3989 13.2411 13.1784 13.4301 12.8956C13.6191 12.6127 13.72 12.2802 13.72 11.94C13.72 11.4838 13.5388 11.0463 13.2162 10.7238C12.8937 10.4012 12.4562 10.22 12 10.22Z' fill='%23fff'/%3E%3C/svg%3E");
+            width: 50px;
+            height: 50px;
+            display: block;
+            opacity: .7;
+        }
+
+        .STING-WEB-Card-Vs {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            align-items: center;
+            justify-items: center;
+            padding: 10px 0;
+        }
+
+        .STING-WEB-Card-Vs-Right,
+        .STING-WEB-Card-Vs-Left,
+        .STING-WEB-Card-Vs-Center {
+            display: grid;
+            gap: 12px;
+            text-align: center;
+            justify-items: center;
+        }
+
+        .STING-WEB-Card-Vs-Right img,
+        .STING-WEB-Card-Vs-Left img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .STING-WEB-Card-Vs-Right span,
+        .STING-WEB-Card-Vs-Left span {
+            font-size: 15px;
+        }
+
+        .STING-WEB-Card-Vs-Center .VS {
+            font-size: 40px;
+        }
+
+        .Time-Start {
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .STING-WEB-Card-Vs .Goal {
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #15191d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            font-weight: 600;
+            background: #15191d;
+        }
+
+        .STING-WEB-Event-Toggle {
+            display: flex;
+            justify-content: space-around;
+            font-size: 14px;
+            margin: 20px auto;
+            width: 92%;
+            overflow-x: scroll;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+
+        .STING-WEB-Event-Toggle div {
+            background: #15191d;
+            padding: 5px 14px;
+            border-top: 2px solid #15191d;
+            border-right: 2px solid #15191d;
+            border-left: 2px solid #15191d;
+            margin: 0 2px;
+            border-radius: 5px;
+            color: #bfc3d4;
+        }
+
+        .STING-WEB-Events-Match {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            margin-bottom: 8px;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .STING-WEB-Events-Match:nth-child(odd) {
+            background: #15191d;
+        }
+
+        .STING-WEB-Event-Match-Center {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .STING-WEB-Event-Match-Right,
+        .STING-WEB-Event-Match-Left {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .STING-WEB-Event-Match-Left {
+            justify-content: flex-end;
+        }
+
+        .STING-WEB-Player-Names {
+            display: grid;
+            gap: 0;
+            font-size: 10px;
+        }
+
+        .STING-WEB-Event-Player {
+            display: grid;
+        }
+
+        .STING-WEB-Event-Match-Left .STING-WEB-Event-Player {
+            order: 1;
+        }
+
+        .STING-WEB-Event-Match-Left .STING-WEB-Extra-Players {
+            order: 2;
+        }
+
+        .STING-WEB-Events {
+            display: grid;
+            width: 93%;
+            margin: 0 auto;
+        }
+
+        .STING-WEB-Events-Match img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .STING-WEB-Event-Match-Center img.event-logo {
+            width: 15px;
+            height: 20px;
+        }
+
+        .STING-WEB-H2H h3 {
+            font-size: 15px;
+            margin: 12px auto;
+            width: 88%;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            color: #bfc3d4;
+        }
+
+        .STING-WEB-H2H h3:before {
+            content: "";
+            width: 15px;
+            height: 5px;
+            background: #bfc3d4;
+            display: block;
+            border-radius: 50px;
+        }
+
+        .STING-WEB-Details,
+        .STING-WEB-H2H {
+            width: 88%;
+            margin: 0 auto;
+        }
+
+        .STING-WEB_MatchInfo-Table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #15191dbf;
+            border-radius: 8px;
+        }
+
+        .STING-WEB_MatchInfo-Table tr {
+            border-bottom: 1px solid #0b0d10;
+            font-size: 15px;
+        }
+
+        .STING-WEB_MatchInfo-Table td,
+        .STING-WEB_MatchInfo-Table th {
+            font-weight: 500;
+            padding: 12px;
+            line-height: 25px;
+        }
+
+        .STING-WEB_MatchInfo-Table td {
+            border-right: 1px solid #0b0d10;
+            font-size: 13px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+        }
+
+        .STING-WEB_MatchInfo-Table td img {
+            margin-left: 12px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+        }
+
+        .STING-WEB-Last-Match {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 2px solid #15191d;
+            background: #15191d8c;
+            width: 88%;
+            margin: 0 auto;
+            margin-bottom: 5px;
+            text-align: center;
+            color: #bfc3d4 !important;
+        }
+
+        .STING-WEB-Last-Match-Right img,
+        .STING-WEB-Last-Match-Left img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .STING-WEB-Last-Match-Right,
+        .STING-WEB-Last-Match-Left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .STING-WEB-Last-Match-Right span,
+        .STING-WEB-Last-Match-Left span {
+            font-size: 13px;
+        }
+
+        .STING-WEB-Last-Match-Center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .STING-WEB-Last-Match-Center img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+
+        .STING-WEB-Last-Match .Goal {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .STING-WEB-Last-Match-Date,
+        .STING-WEB-Last-Match-Time {
+            font-size: 11px;
+            padding-top: 6px;
+        }
+
+        .STING-WEB-Last-Match-Status {
+            font-size: 13px;
+            padding-top: 6px;
+            color: #fff;
+        }
+
+        .STING-WEB-Toggle-Event-Button.active {
+            font-weight: 600;
+            background: transparent;
+            border-top: 2px solid #15191d;
+            border-radius: 0;
+            border-right: 2px solid #15191d;
+            border-left: 2px solid #15191d;
+            color: #00dd75;
+        }
+
+        .STING-WEB_MatchInfo-Table th {
+            color: #bfc3d4;
+        }
+
+
+
+
+
+        .home-field-map,
+        .away-field-map {
+            display: flex;
+            background-image: url("data:image/svg+xml,%3Csvg class='soccer_field_vert soccer_field_svg' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 1150' fill='none' preserveAspectRatio='none'%3E%3Cg transform='matrix(0 1 -1 0 720 -0)'%3E%3Cg clip-path='url(%23clip0)'%3E%3Crect fill='white' width='720' height='1150'%3E%3C/rect%3E%3Cpath d='M0 0H1150V720H0V0Z' stroke='white' fill='%23256c27'%3E%3C/path%3E%3Cpath d='M575 20H30V690H1120V20H575V690V20Z' fill='%23256c27'%3E%3C/path%3E%3Cg%3E%3Crect fill='%23317433' width='60' height='717.5' x='0' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='121' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='242' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='363' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='484' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='605' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='726' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='847' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='967' y='2'%3E%3C/rect%3E%3Crect fill='%23317433' width='60' height='717.5' x='1089' y='2'%3E%3C/rect%3E%3C/g%3E%3Cpath d='M575 30H30V690H1120V30H575ZM575 30V690V30Z' stroke='%2399C297' stroke-width='2'%3E%3C/path%3E%3Cpath d='M666.5 360C666.5 335.733 656.86 312.459 639.7 295.3C622.541 278.14 599.267 268.5 575 268.5C550.733 268.5 527.459 278.14 510.3 295.3C493.14 312.459 483.5 335.733 483.5 360C483.5 384.267 493.14 407.541 510.3 424.7C527.459 441.86 550.733 451.5 575 451.5C599.267 451.5 622.541 441.86 639.7 424.7C656.86 407.541 666.5 384.267 666.5 360Z' stroke='%2399C297' stroke-width='2'%3E%3C/path%3E%3Cpath d='M162 360C162 359.47 161.789 358.961 161.414 358.586C161.039 358.211 160.53 358 160 358C159.47 358 158.961 358.211 158.586 358.586C158.211 358.961 158 359.47 158 360C158 360.53 158.211 361.039 158.586 361.414C158.961 361.789 159.47 362 160 362C160.53 362 161.039 361.789 161.414 361.414C161.789 361.039 162 360.53 162 360Z' fill='%2399C297' stroke='%2399C297'%3E%3C/path%3E%3Cpath d='M992 360C992 359.47 991.789 358.961 991.414 358.586C991.039 358.211 990.53 358 990 358C989.47 358 988.961 358.211 988.586 358.586C988.211 358.961 988 359.47 988 360C988 360.53 988.211 361.039 988.586 361.414C988.961 361.789 989.47 362 990 362C990.53 362 991.039 361.789 991.414 361.414C991.789 361.039 992 360.53 992 360Z' fill='%2399C297' stroke='%2399C297'%3E%3C/path%3E%3Cpath d='M30 269.4H105V451.6H30V269.4Z' stroke='%2399C297' stroke-width='2'%3E%3C/path%3E%3Cpath d='M1120 269.4H1045V451.6H1120V269.4Z' stroke='%2399C297' stroke-width='2'%3E%3C/path%3E%3Cpath d='M30 159.4H215V561.6H30V159.4Z' stroke='%2399C297' stroke-width='2'%3E%3C/path%3E%3Cpath d='M1120 159.4H935V561.6H1120V159.4Z' stroke='%2399C297' stroke-width='2'%3E%3C/path%3E%3Cpath d='M215 286.88C226.335 295.406 235.534 306.45 241.868 319.141C248.203 331.832 251.5 345.821 251.5 360.005C251.5 374.189 248.203 388.178 241.868 400.869C235.534 413.56 226.335 424.604 215 433.13V286.88Z' stroke='%2399C297' stroke-width='2' fill='%23256c27'%3E%3C/path%3E%3Cpath d='M935 286.88C923.665 295.406 914.466 306.45 908.132 319.141C901.797 331.832 898.5 345.821 898.5 360.005C898.5 374.189 901.797 388.178 908.132 400.869C914.466 413.56 923.665 424.604 935 433.13V286.88Z' stroke='%2399C297' stroke-width='2' fill='%23256c27'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            width: 80%;
+            align-items: center;
+            margin: auto;
+            flex-direction: column;
+            height: 485px;
+            gap: 27px;
+            border-radius: 6px;
+        }
+
+
+        .position {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+
+
+        .home-field-map .player img,
+        .away-field-map .player img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .home-field-map .player,
+        .away-field-map .player {
+            display: grid;
+            justify-items: center;
+            margin: 6px;
+        }
+
+        .home-field-map .player span,
+        .away-field-map .player span {
+            font-size: 10px;
+            color: #ffffff;
+        }
+
+        .Team-Buttons {
+            display: flex;
+            margin: 11px auto;
+            margin-bottom: 15px;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .Team-Button {
+            background: #15191d;
+            color: #fff;
+            padding: 8px 15px;
+            border: 0;
+            font-size: 15px;
+            border-radius: 5px;
+            width: 35%;
+        }
+
+        .Team-Button.Lenup {
+            color: #00dd75;
+            font-weight: 600;
+        }
+
+        .STING-WEB-Player-Repeat {
+            width: 88%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 5px 10px;
+            background: #15191d70;
+            margin-bottom: 5px;
+            border-radius: 12px;
+            border: 2px solid #1f2429cc;
+        }
+
+        .STING-WEB-Player-Repeat-Right img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            display: flex;
+            align-items: center;
+        }
+
+        .Starting:after {
+            content: "دكة البدلاء";
+            font-size: 17px;
+            margin: 0 auto;
+            width: 70%;
+            margin-top: 20px;
+            display: flex;
+            background: #0f1215;
+            padding: 5px 25px;
+            border-radius: 12px;
+            border: 2px solid #1f2429cc;
+        }
+
+        .Bench {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 20px auto;
+            width: 92%;
+            gap: 5px 12px;
+            margin-top: 10px;
+        }
+
+        .Starting {
+            position: relative;
+        }
+
+        .STING-WEB-Formation {
+            position: absolute;
+            right: 60px;
+            top: 20px;
+            background: #00000045;
+            color: #ffffff;
+            padding: 2px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .STING-WEB-Team .STING-WEB-TITLE-ODO:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            display: flex;
+            align-self: center;
+            border-radius: 50px;
+        }
+
+        .STING-WEB-Player-Repeat-Left {
+            display: grid;
+            gap: 5px;
+            font-size: 13px;
+            align-items: center;
+        }
+
+        .STING-WEB-WatchTV {
+            text-align: center;
+            display: none;
+            margin: 15px auto;
+            font-size: 18px;
+            background: #ff000069;
+            width: 80%;
+            padding: 5px;
+            border-radius: 8px;
+            animation: 800ms ease-in-out infinite blinker;
+        }
+
+        .STING-WEB-WatchTV.block {
+            display: block;
+        }
+
+        .STING-WEB-Events,
+        .STING-WEB-Team,
+        .STING-WEB-Statistics,
+        .STING-WEB-H2H {
+            display: none;
+        }
+
+        .STING-WEB-Match-Card,
+        .STING-WEB-Details {
+            display: block;
+
+        }
+    </style>
+
+
+
+
+
+    <div class="STING-WEB-Match-Card"></div>
+    <div class="STING-WEB-Event-Toggle">
+        <div class="STING-WEB-Toggle-Event-Button active" id="info" onclick="showSection('STING-WEB-Details', this)">
+            التفاصيل</div>
+        <div class="STING-WEB-Toggle-Event-Button" id="collection" onclick="showSection('STING-WEB-Team', this)">التشكيل
+        </div>
+        <div class="STING-WEB-Toggle-Event-Button" id="events" onclick="showSection('STING-WEB-Events', this)">الأحداث
+        </div>
+        <div class="STING-WEB-Toggle-Event-Button" id="statistics" onclick="showSection('STING-WEB-Statistics', this)">
+            الإحصائيات</div>
+        <div class="STING-WEB-Toggle-Event-Button" id="H2H" onclick="showSection('STING-WEB-H2H', this)">H2H</div>
+    </div>
+    <a class="STING-WEB-WatchTV" href="/channels/">مشاهدة المباراة</a>
+    <div class="STING-WEB-Details"></div>
+    <div class="STING-WEB-Events"></div>
+    <div class="STING-WEB-Team">
+        <div class="STING-WEB-Team-Up-Right"></div>
+        <div class="STING-WEB-Team-Up-Left"></div>
+    </div>
+    <div class="STING-WEB-Statistics"></div>
+    <div class="STING-WEB-H2H"></div>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const matchID = urlParams.get('id');
+
+        function getTimeZoneOffset() {
+            const date = new Date();
+            const timeZoneOffset = date.getTimezoneOffset();
+            const hours = Math.floor(Math.abs(timeZoneOffset) / 60);
+            const minutes = Math.abs(timeZoneOffset) % 60;
+            const sign = timeZoneOffset <= 0 ? "+" : "-";
+            return `${sign}${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+        }
+
+        const timeZone = getTimeZoneOffset();
+
+        function fetchMatchData(matchID) {
+            const proxyUrl = 'https://joaantv.com/proxy.php';
+            const date = new Date();
+            const formattedDate = date.toISOString().split('T')[0];
+
+            const apiURL = `${proxyUrl}?url=${encodeURIComponent(`https://www.messisporat.com/api/matches/events/?MatchID=${matchID}&time=+3`)}`;
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data['STING-WEB-Match-Details']) {
+                        const matchDetails = data['STING-WEB-Match-Details'];
+                        displayMatchCard(matchDetails['Match-Card']);
+                        displayMatchDetails(matchDetails['Match-Card'], matchDetails['Match-Info']);
+                        displayMatchEvents(matchDetails);
+                        displayLineup({
+                            Home: matchDetails['Match-Lineup']['Home-Team'],
+                            Away: matchDetails['Match-Lineup']['Away-Team']
+                        });
+
+                    } else {
+                        console.error("لم يتم العثور على بيانات المباراة.");
+                    }
+                })
+                .catch(error => console.error('حدث خطأ أثناء جلب البيانات:', error));
+        }
+
+        function startCountdown(selector, matchDateStr, matchTimeStr) {
+            const timeElement = document.querySelector(selector);
+            const matchDate = new Date(`${matchDateStr}T${matchTimeStr}`);
+            const countdownInterval = setInterval(() => {
+                const now = new Date();
+                const timeDiff = matchDate - now;
+                const twoHoursInMs = 2 * 60 * 60 * 1000;
+                function padZero(number) {
+                    return number < 10 ? `0${number}` : number;
+                }
+                if (timeDiff > 0) {
+                    let countdownText = '';
+                    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                    countdownText += `${padZero(days)}:${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+                    timeElement.textContent = countdownText;
+                } else {
+                    const timeSinceMatchStarted = now - matchDate;
+                    if (timeSinceMatchStarted > twoHoursInMs) {
+                        clearInterval(countdownInterval);
+                        timeElement.textContent = "إنتهت";
+                    } else {
+                        clearInterval(countdownInterval);
+                        timeElement.textContent = "مباشر";
+                        document.querySelector(".STING-WEB-WatchTV").classList.add("block");
+                        timeElement.style.color = "red";
+                    }
+                }
+            }, 1000);
+        }
+
+        function displayMatchCard(matchCard) {
+            const cardDiv = document.querySelector('.STING-WEB-Match-Card');
+            cardDiv.innerHTML = `
+        <div class="STING-WEB-Card-Vs">
+            <div class="STING-WEB-Card-Vs-Right">
+                <img src="http://yanb8.com${matchCard['Team-Right']['Logo']}" alt="${matchCard['Team-Right']['Name']}"/>
+                <span>${matchCard['Team-Right']['Name']}</span>
+                <span class="Goal">${matchCard['Team-Right']['Goal']}</span>
+            </div>
+            <div class="STING-WEB-Card-Vs-Center">
+                <span class="VS">VS</span>
+                <span class="Time-Start" data-date="${matchCard['Date']} ${matchCard['Time']}">${matchCard['Time']}</span>
+            </div>
+            <div class="STING-WEB-Card-Vs-Left">
+                <img src="http://yanb8.com${matchCard['Team-Left']['Logo']}" alt="${matchCard['Team-Left']['Name']}"/>
+                <span>${matchCard['Team-Left']['Name']}</span>
+                <span class="Goal">${matchCard['Team-Left']['Goal']}</span>
+            </div>
+        </div>
+        `;
+            startCountdown('.Time-Start', matchCard['Date'], matchCard['Time']);
+        }
+
+
+        function displayMatchDetails(matchCard, matchInfo) {
+            const detailsDiv = document.querySelector('.STING-WEB-Details');
+            let detailsContent = `<table class="STING-WEB_MatchInfo-Table"><tbody>`;
+
+            if (matchCard['Cup-Name'] && matchCard['Cup-Name'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>البطولة</th>
+                    <td><img src="http://yanb8.com${matchCard['Cup-Logo']}" alt="${matchCard['Cup-Name']}"/>${matchCard['Cup-Name']}</td>
+                </tr>`;
+            }
+            if (matchInfo['Club-Name'] && matchInfo['Club-Name'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>الملعب</th>
+                    <td>${matchInfo['Club-Name']}</td>
+                </tr>`;
+            }
+            if (matchCard['Date'] && matchCard['Date'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>التاريخ</th>
+                    <td>${matchCard['Date']}</td>
+                </tr>`;
+            }
+            if (matchCard['Time'] && matchCard['Time'] !== 'N/A') {
+                function convertTo12Hour(time24) {
+                    const [hour, minute] = time24.split(':');
+                    let period = 'صباحا';
+                    let hour12 = parseInt(hour, 10);
+                    if (hour12 >= 12) {
+                        period = 'مساءاََ';
+                        if (hour12 > 12) {
+                            hour12 -= 12;
+                        }
+                    } else if (hour12 === 0) {
+                        hour12 = 12;
+                    }
+                    return `${hour12}:${minute} ${period}`;
+                }
+                const time12Hour = convertTo12Hour(matchCard['Time']);
+                detailsContent += `
+                <tr>
+                    <th>التوقيت</th>
+                    <td>${time12Hour}</td>
+                </tr>`;
+            }
+            if (matchCard['Round'] && matchCard['Round'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>الجولة</th>
+                    <td style="color: #00d671; font-size: 16px;">${matchCard['Round']}</td>
+                </tr>`;
+            }
+            if (matchCard['Status'] && matchCard['Status'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>الحالة</th>
+                    <td>${matchCard['Status']}</td>
+                </tr>`;
+            }
+            if (matchInfo['Tv'] && matchInfo['Tv'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>القناة</th>
+                    <td>${matchInfo['Tv']}</td>
+                </tr>`;
+            }
+            if (matchInfo['Match-Referee'] && matchInfo['Match-Referee'] !== 'N/A') {
+                detailsContent += `
+                <tr>
+                    <th>المعلق</th>
+                    <td>${matchInfo['Match-Referee']}</td>
+                </tr>`;
+            }
+            detailsContent += `</tbody></table>`;
+            detailsDiv.innerHTML = detailsContent;
+        }
+
+
+
+        // Lineup
+        function displayLineup(lineup) {
+            const rightTeam = document.querySelector(".STING-WEB-Team-Up-Right");
+            const leftTeam = document.querySelector(".STING-WEB-Team-Up-Left");
+
+            const buttonsDiv = document.createElement("div");
+            buttonsDiv.className = "Team-Buttons";
+
+            const homeButton = document.createElement("button");
+            homeButton.className = "Team-Button";
+            homeButton.innerText = lineup.Home['Team-Name'];
+
+            const awayButton = document.createElement("button");
+            awayButton.className = "Team-Button";
+            awayButton.innerText = lineup.Away['Team-Name'];
+
+            buttonsDiv.appendChild(homeButton);
+            buttonsDiv.appendChild(awayButton);
+
+            rightTeam.appendChild(buttonsDiv);
+
+            const homePlayersDiv = document.createElement("div");
+            homePlayersDiv.className = "Starting-Players";
+            homePlayersDiv.style.display = "block";
+
+            const homeStartingDiv = document.createElement("div");
+            homeStartingDiv.className = "Starting";
+            homeStartingDiv.innerHTML = `<span class="STING-WEB-Formation">${lineup.Home['Formation']}</span>`;
+            homePlayersDiv.appendChild(homeStartingDiv);
+
+            const homeFieldMap = document.createElement("div");
+            homeFieldMap.className = "home-field-map";
+            homeStartingDiv.appendChild(homeFieldMap);
+
+            function distributePlayers(formation, players) {
+                const formationArr = formation.split("-").map(Number);
+
+                const goalkeeper = players.find(player => player.Position === "حارس مرمى");
+                if (goalkeeper) {
+                    const gkDiv = document.createElement("div");
+                    gkDiv.className = "position goalkeeper";
+                    gkDiv.innerHTML = `
+                    <div class="player">
+                        <img src="http://yanb8.com${goalkeeper['Player-Logo']}" alt="${goalkeeper['Player-Name']}" />
+                        <span>${goalkeeper['Player-Name']}</span>
+                    </div>
+                `;
+                    homeFieldMap.appendChild(gkDiv);
+                }
+
+                const otherPlayers = players.filter(player => player.Position !== "حارس مرمى");
+
+                formationArr.forEach((numPlayers) => {
+                    const positionDiv = document.createElement("div");
+                    positionDiv.className = "position";
+
+                    const playersInPosition = otherPlayers.filter(player => player.Status === "Starting").slice(0, numPlayers);
+                    otherPlayers.splice(0, numPlayers);
+
+                    playersInPosition.forEach(player => {
+                        const playerDiv = document.createElement("div");
+                        playerDiv.className = "player";
+                        playerDiv.innerHTML = `
+                        <img src="http://yanb8.com${player['Player-Logo']}" alt="${player['Player-Name']}" />
+                        <span>${player['Player-Name']}</span>
+                    `;
+                        positionDiv.appendChild(playerDiv);
+                    });
+                    homeFieldMap.appendChild(positionDiv);
+                });
+            }
+
+            const homeStartingPlayers = lineup.Home.Team.filter(player => player.Status === "Starting");
+            distributePlayers(lineup.Home['Formation'], homeStartingPlayers);
+
+            const homeBenchDiv = document.createElement("div");
+            homeBenchDiv.className = "Bench";
+            const homeBenchPlayers = lineup.Home.Team.filter(player => player.Status === "Substitute");
+            homeBenchPlayers.forEach(player => {
+                homeBenchDiv.innerHTML += `
+                <div class="STING-WEB-Player-Repeat">
+                    <div class="STING-WEB-Player-Repeat-Right">
+                        <img src="http://yanb8.com${player['Player-Logo']}" alt="${player['Player-Name']}"/>
+                    </div>
+                    <div class="STING-WEB-Player-Repeat-Left">
+                        <span>${player['Player-Name']}</span>
+                        <span style="font-size: 10px; color: #CDDC39; display: flex;">( ${player['Position']} )</span>
+                    </div>
+                </div>
+            `;
+            });
+            homePlayersDiv.appendChild(homeBenchDiv);
+            rightTeam.appendChild(homePlayersDiv);
+
+            const awayPlayersDiv = document.createElement("div");
+            awayPlayersDiv.className = "Starting-Players";
+            awayPlayersDiv.style.display = "none";
+
+            const awayStartingDiv = document.createElement("div");
+            awayStartingDiv.className = "Starting";
+            awayStartingDiv.innerHTML = `<span class="STING-WEB-Formation">${lineup.Away['Formation']}</span>`;
+
+            const awayFieldMap = document.createElement("div");
+            awayFieldMap.className = "away-field-map";
+
+            const awayGoalkeeper = lineup.Away.Team.find(player => player.Position === "حارس مرمى" && player.Status === "Starting");
+            if (awayGoalkeeper) {
+                const goalkeeperDiv = document.createElement("div");
+                goalkeeperDiv.className = "player goalkeeper";
+                goalkeeperDiv.style.textAlign = "center";
+                goalkeeperDiv.innerHTML = `
+                <img src="http://yanb8.com${awayGoalkeeper['Player-Logo']}" alt="${awayGoalkeeper['Player-Name']}" />
+                <span>${awayGoalkeeper['Player-Name']}</span>
+            `;
+                awayFieldMap.appendChild(goalkeeperDiv);
+            }
+
+            function distributeAwayPlayers(formation, players) {
+                const formationArr = formation.split("-").map(Number);
+                const distributedPlayers = {};
+
+                let playerIndex = 0;
+                formationArr.forEach((count, idx) => {
+                    const position = idx === 0 ? "حارس مرمى" : (idx === 1 ? "مدافع" : (idx === 2 ? "وسط" : "مهاجم"));
+                    distributedPlayers[position] = [];
+
+                    for (let i = 0; i < count && playerIndex < players.length; i++) {
+                        distributedPlayers[position].push(players[playerIndex]);
+                        playerIndex++;
+                    }
+                });
+
+                return distributedPlayers;
+            }
+
+            const awayStartingPlayers = lineup.Away.Team.filter(player => player.Status === "Starting" && player.Position !== "حارس مرمى");
+            const awayPlayersByPosition = distributeAwayPlayers(lineup.Away['Formation'], awayStartingPlayers);
+
+            for (const position in awayPlayersByPosition) {
+                const positionDiv = document.createElement("div");
+                positionDiv.className = "position";
+                awayPlayersByPosition[position].forEach(player => {
+                    const playerDiv = document.createElement("div");
+                    playerDiv.className = "player";
+                    playerDiv.style.position = "relative";
+                    playerDiv.innerHTML = `
+                    <img src="http://yanb8.com${player['Player-Logo']}" alt="${player['Player-Name']}" />
+                    <span>${player['Player-Name']}</span>
+                `;
+                    positionDiv.appendChild(playerDiv);
+                });
+
+                awayFieldMap.appendChild(positionDiv);
+            }
+            awayStartingDiv.appendChild(awayFieldMap);
+            awayPlayersDiv.appendChild(awayStartingDiv);
+
+            const awayBenchDiv = document.createElement("div");
+            awayBenchDiv.className = "Bench";
+            const awayBenchPlayers = lineup.Away.Team.filter(player => player.Status === "Substitute");
+            awayBenchPlayers.forEach(player => {
+                awayBenchDiv.innerHTML += `
+                <div class="STING-WEB-Player-Repeat">
+                    <div class="STING-WEB-Player-Repeat-Right">
+                        <img src="http://yanb8.com${player['Player-Logo']}" alt="${player['Player-Name']}"/>
+                    </div>
+                    <div class="STING-WEB-Player-Repeat-Left">
+                        <span>${player['Player-Name']}</span>
+                        <span style="font-size: 10px; color: #CDDC39; display: flex;">( ${player['Position']} )</span>
+                    </div>
+                </div>
+            `;
+            });
+            awayPlayersDiv.appendChild(awayBenchDiv);
+            leftTeam.appendChild(awayPlayersDiv);
+
+            homeButton.classList.add("Lenup");
+            homeButton.addEventListener("click", () => {
+                if (homePlayersDiv.style.display === "none") {
+                    homePlayersDiv.style.display = "block";
+                    awayPlayersDiv.style.display = "none";
+                    homeButton.classList.add("Lenup");
+                    awayButton.classList.remove("Lenup");
+                }
+            });
+            awayButton.addEventListener("click", () => {
+                if (awayPlayersDiv.style.display === "none") {
+                    awayPlayersDiv.style.display = "block";
+                    homePlayersDiv.style.display = "none";
+                    awayButton.classList.add("Lenup");
+                    homeButton.classList.remove("Lenup");
+                }
+            });
+        }
+
+
+        // H2H
+        function displayRecentMatches(matchCard, matchInfo) {
+            const h2hDiv = document.querySelector('.STING-WEB-H2H');
+            const matchID = matchCard['Match-id'];
+            const timeZone = matchCard['Time-Zone'];
+            const proxyUrl = 'https://joaantv.com/proxy.php';
+            const date = getTimeZoneOffset();
+            const apiUrl = `${proxyUrl}?url=${encodeURIComponent(`https://www.messisporat.com/api/matches/h2h/?MatchID=${matchID}&time=${date}`)}`;
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const matches = data["STING-WEB-Match-Details"];
+                    const upcomingMatch = matches.find(match => {
+                        const matchDateTime = new Date(`${match.Date}T${match.Time}${match['Time-Zone']}`);
+                        return matchDateTime > new Date();
+                    });
+                    if (upcomingMatch) {
+                        function convertTo12Hour(time24) {
+                            const [hour, minute] = time24.split(':');
+                            let period = 'صباحا';
+                            let hour12 = parseInt(hour, 10);
+                            if (hour12 >= 12) {
+                                period = 'مساءاََ';
+                                if (hour12 > 12) {
+                                    hour12 -= 12;
+                                }
+                            } else if (hour12 === 0) {
+                                hour12 = 12;
+                            }
+                            return `${hour12}:${minute} ${period}`;
+                        }
+                        const time12Hour = convertTo12Hour(upcomingMatch['Time']);
+                        const upcomingContent = `
+                    <h3>المباراة القادمة بين الفريقين</h3>
+                    <div class="STING-WEB-Last-Match upcoming-match">
+                        <div class="STING-WEB-Last-Match-Right">
+                            <img src="http://yanb8.com${upcomingMatch['Team-Right']['Logo']}" alt="${upcomingMatch['Team-Right']['Name']}"/>
+                            <span>${upcomingMatch['Team-Right']['Name']}</span>
+                            <span class="Goal">${upcomingMatch['Team-Right']['Goal']}</span>
+                        </div>
+                        <div class="STING-WEB-Last-Match-Center">
+                            <img src="http://yanb8.com${upcomingMatch['Cup-Logo']}" alt="${upcomingMatch['Cup-Name']}" />
+                        </div>
+                        <div class="STING-WEB-Last-Match-Left">
+                            <span class="Goal">${upcomingMatch['Team-Left']['Goal']}</span>
+                            <span>${upcomingMatch['Team-Left']['Name']}</span>
+                            <img src="http://yanb8.com${upcomingMatch['Team-Left']['Logo']}" alt="${upcomingMatch['Team-Left']['Name']}"/>
+                        </div>
+                        <div class="STING-WEB-Last-Match-Date">${upcomingMatch['Date']}</div>
+                        <div class="STING-WEB-Last-Match-Status">${upcomingMatch['Match-Status']}</div>
+                        <div class="STING-WEB-Last-Match-Time">${time12Hour}</div>
+                    </div>`;
+                        h2hDiv.innerHTML += upcomingContent;
+                    }
+                    const matchesDiv = document.createElement('div');
+                    matchesDiv.innerHTML += '<h3>آخر المباريات بين الفريقين</h3>';
+                    const recentMatches = matches.filter(match => {
+                        const matchDateTime = new Date(`${match.Date}T${match.Time}${match['Time-Zone']}`);
+                        return matchDateTime <= new Date();
+                    }).slice(0, 5);
+                    recentMatches.forEach(match => {
+                        const teamRightGoal = match["Team-Right"].Goal;
+                        const teamLeftGoal = match["Team-Left"].Goal;
+                        function convertTo12Hour(time24) {
+                            const [hour, minute] = time24.split(':');
+                            let period = 'صباحا';
+                            let hour12 = parseInt(hour, 10);
+                            if (hour12 >= 12) {
+                                period = 'مساءاََ';
+                                if (hour12 > 12) {
+                                    hour12 -= 12;
+                                }
+                            } else if (hour12 === 0) {
+                                hour12 = 12;
+                            }
+                            return `${hour12}:${minute} ${period}`;
+                        }
+                        const time12Hour = convertTo12Hour(match['Time']);
+                        const matchContent = `
+                    <div class="STING-WEB-Last-Match">
+                        <div class="STING-WEB-Last-Match-Right">
+                            <img src="http://yanb8.com${match['Team-Right']['Logo']}" alt="${match['Team-Right']['Name']}"/>
+                            <span>${match['Team-Right']['Name']}</span>
+                            <span class="Goal" style="color: ${teamRightGoal > teamLeftGoal ? '#00dd75' : teamRightGoal < teamLeftGoal ? '#ff0000' : '#bfc3d4'};">${teamRightGoal}</span>
+                        </div>
+                        <div class="STING-WEB-Last-Match-Center">
+                            <img src="http://yanb8.com${match['Cup-Logo']}" alt="${match['Cup-Name']}" />
+                        </div>
+                        <div class="STING-WEB-Last-Match-Left">
+                            <span class="Goal" style="color: ${teamLeftGoal > teamRightGoal ? '#00dd75' : teamLeftGoal < teamRightGoal ? '#ff0000' : '#bfc3d4'};">${teamLeftGoal}</span>
+                            <span>${match['Team-Left']['Name']}</span>
+                            <img src="http://yanb8.com${match['Team-Left']['Logo']}" alt="${match['Team-Left']['Name']}"/>
+                        </div>
+                        <div class="STING-WEB-Last-Match-Date">${match['Date']}</div>
+                        <div class="STING-WEB-Last-Match-Status">${match['Match-Status']}</div>
+                        <div class="STING-WEB-Last-Match-Time">${time12Hour}</div>
+                    </div>`;
+                        matchesDiv.innerHTML += matchContent;
+                    });
+                    h2hDiv.appendChild(matchesDiv);
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+        if (matchID) {
+            const matchCard = {
+                'Match-id': matchID,
+                'Time-Zone': timeZone
+            };
+            displayRecentMatches(matchCard);
+        } else {
+            console.error('matchID غير موجود في URL.');
+        }
+
+        // Events
+        function displayMatchEvents(matchDetails) {
+            const eventsDiv = document.querySelector('.STING-WEB-Events');
+            const widgetsDiv = document.createElement('div');
+            widgetsDiv.classList.add('STING-WEB-Match-Widget');
+            const matchWidgets = matchDetails["Match-Widgets"];
+            if (matchWidgets && matchWidgets.length > 0) {
+                const widget = matchWidgets[0];
+                const widgetUrl = widget['WidgetUrl'].replace("=light", "=dark");
+                const widgetIframe = `
+                <iframe src="${widgetUrl}" class="event-widget" style="width:100%; height:80px; border:none;"></iframe>
+            `;
+                widgetsDiv.innerHTML += widgetIframe;
+            }
+            eventsDiv.appendChild(widgetsDiv);
+            const matchEvents = matchDetails['Match-Events'];
+
+            if (!matchEvents || matchEvents.length === 0) {
+                eventsDiv.innerHTML = `<div style="text-align: center;color: #fff;font-size: 15px;background: #15191d9e;height: 100px;border-radius: 8px;display: grid;align-items: center;gap: 12px;width: 85%;margin: 15px auto;padding: 20px 0;justify-items: center;"><span class="STING-WEB-Not-Events_SVG"></span><span>لا توجد أحداث في الوقت الحالي ... </span></div>`;
+                return;
+            }
+            matchEvents.forEach(event => {
+                if (!event['Event-Time']) return;
+                const eventElement = document.createElement('div');
+                eventElement.classList.add('STING-WEB-Events-Match');
+                eventElement.style.order = event['Order'];
+                const centerElement = document.createElement('div');
+                centerElement.classList.add('STING-WEB-Event-Match-Center');
+                centerElement.innerHTML = `
+                <span style="width: 30px;height: 30px;display: flex;font-size: 12px;border: 1px solid #dddddd63;align-items: center;justify-content: center;border-radius: 8px;">
+                    ${event['Event-Time']}
+                </span>
+                <img src="${event['Event-Logo']}" alt="${event['Event-Name']}" class="event-logo"/>
+            `;
+                const leftElement = document.createElement('div');
+                leftElement.classList.add('STING-WEB-Event-Match-Left');
+                const rightElement = document.createElement('div');
+                rightElement.classList.add('STING-WEB-Event-Match-Right');
+                if (event['Event-Player']) {
+                    const player = event['Event-Player'];
+                    const playerHTML = `
+                    <div class="STING-WEB-Event-Player">
+                        <img src="http://yanb8.com${player['IMG']}" alt="${player['Name']}" class="player-img"/>
+                    </div>
+                    ${player['Extra'] && player['Extra'].length > 0 ? `
+                        <div class="STING-WEB-Extra-Players">
+                            ${player['Extra'].map(extraPlayer => `
+                                <div class="STING-WEB-Event-Player">
+                                    <img src="http://yanb8.com${extraPlayer['IMG']}" alt="${extraPlayer['Name']}" class="extra-player-img"/>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="STING-WEB-Player-Names">
+                            <span style="font-weight: 600; color: #00dc75c4;">${player['Name']}</span>
+                            ${player['Extra'].map(extraPlayer => `
+                                <span style="font-weight: 600; color: #ff0000;">${extraPlayer['Name']}</span>
+                            `).join('')}
+                        </div>
+                    ` : `
+                        <div class="STING-WEB-Player-Names">
+                            <span style="font-weight: 600; color: #00dc75c4;">${player['Name']}</span>
+                        </div>
+                    `}
+                `;
+                    if (event['Place'] === 'right') {
+                        rightElement.innerHTML = playerHTML;
+                    } else if (event['Place'] === 'left') {
+                        leftElement.innerHTML = playerHTML;
+                    }
+                }
+                eventElement.appendChild(rightElement);
+                eventElement.appendChild(centerElement);
+                eventElement.appendChild(leftElement);
+                eventsDiv.appendChild(eventElement);
+            });
+        }
+
+
+
+
+
+
+
+
+        function showSection(sectionClass, buttonElement) {
+            const sections = document.querySelectorAll('.STING-WEB-Details, .STING-WEB-Events, .STING-WEB-Team, .STING-WEB-Statistics, .STING-WEB-H2H');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.querySelector(`.${sectionClass}`).style.display = 'block';
+            const buttons = document.querySelectorAll('.STING-WEB-Toggle-Event-Button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (buttonElement) { buttonElement.classList.add('active'); }
+        }
+        if (matchID) {
+            fetchMatchData(matchID);
+        } else {
+            console.error('لم يتم العثور على معرف المباراة في الرابط.');
+        }
+
+    </script>
+
+    <!-- MOBILE -->
+    <div class="STING-WEB-Mobile">
+        <!-- MATCHES -->
+        <a href="/" onclick="setActive('Matches')">
+            <div class="STING-WEB-Mobile-Ico" id="Matches"><span class="STING-WEB-Matches_SVG"></span><span
+                    class="active-span">المباريات</span></div>
+        </a>
+        <!-- TVS -->
+     <!--   <a href="/channels/" onclick="setActive('Tvs')"><div class="STING-WEB-Mobile-Ico" id="Tvs"><span class="STING-WEB-Tv_SVG"></span><span>القنوات</span></div></a>-->
+      <!--   STANDINGS -->
+        <a href="/standings/" onclick="setActive('Ranking')">
+            <div class="STING-WEB-Mobile-Ico" id="Ranking"><span
+                    class="STING-WEB-Ranking_SVG"></span><span>الترتيب</span></div>
+        </a>
+        <!-- NEWS -->
+         <a href="/news/" onclick="setActive('News')"><div class="STING-WEB-Mobile-Ico" id="News"><span class="STING-WEB-News_SVG"></span><span>الأخبار</span></div></a>
+        <!-- SETTINGS -->
+    <!--    <a href="/settings/" onclick="setActive('Settings')">  <div class="STING-WEB-Mobile-Ico" id="Settings"><span  class="STING-WEB-Setting_SVG"></span><span>الإعدادات</span></div</a> -->
+
+    </div>
+</body>
+
+</html>
